@@ -5,12 +5,15 @@
 <head><title>Login</title></head>
 
 <body>
+  <p> {{message}} </p>
+
   <form action = "/authenticate/" method = "POST">
     Username: <input type = "text" name = "username">
     <br>
     Password: <input type = "text" name = "password">
     <br>
-    <input type = "submit" value = "SUBMIT">
+    <input type = "submit" value = "LOGIN" name = "action">
+    <input type = "submit" value = "REGISTER" name = "action">
   </form>
 </body>
 
