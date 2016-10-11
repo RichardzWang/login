@@ -7,7 +7,7 @@ from utils import authenticator
 
 app = Flask(__name__)
 
-app.secret_key = "secret?"
+app.secret_key = '\x90\xfb\x0f6\x1dY\xa5i\x93+m\x83\xd8\xd9\xad\x91}\xef\x95]_\xe2i\xde\xcc\xb7\x03c\x83\xf3\xd1J'
 
 @app.route("/")
 def login():
