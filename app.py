@@ -18,6 +18,8 @@ def login():
 @app.route("/authenticate/", methods = ['POST'])
 def auth():
     #REGISTER
+    if 'username' in session:
+        return redirect(url_for('welcome'))
     if (request.form["action"] == "REGISTER"):
         return render_template('login.html', message = authenticator.register(request.form["username"], request.form["password"]))
 
@@ -42,7 +44,8 @@ def welcome():
 
 @app.route("/logout/")
 def logout():
-    session.pop('username', None)
+    if 'username' in session:
+        session.pop('username', None)
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
