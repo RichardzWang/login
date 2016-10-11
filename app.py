@@ -11,6 +11,8 @@ app.secret_key = '\x90\xfb\x0f6\x1dY\xa5i\x93+m\x83\xd8\xd9\xad\x91}\xef\x95]_\x
 
 @app.route("/")
 def login():
+    if 'username' in session:
+        return redirect(url_for('welcome'))
     return render_template('login.html')
 
 @app.route("/authenticate/", methods = ['POST'])
